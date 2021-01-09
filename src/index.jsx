@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Jobs from './components/Jobs'
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>ban</div>
+    <Jobs/>
   </React.StrictMode>,
   document.getElementById('root')
 );
