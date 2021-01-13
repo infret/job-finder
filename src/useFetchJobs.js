@@ -4,6 +4,7 @@ const ACTIONS = {
 	MAKE_REQUEST: 'make-request',
 	GET_DATA: 'get-data',
 	ERROR: 'error',
+	CHECK_NEXT_PAGE: 'check-next-page',
 }
 
 function reducer(state, action) {
@@ -26,6 +27,11 @@ function reducer(state, action) {
 				error: action.payload.error,
 				jobs: [],
 			}
+		case ACTIONS.CHECK_NEXT_PAGE:
+			return {
+				...state, hasNextPage: action.payload.hasNextPage,
+			}
+
 		default:
 			return state
 	}
@@ -45,12 +51,12 @@ export default function useFetchJobs(params, page) {
 				...params,
 			},
 		}).then(res => res.json()).then(data => {
+					dispatch({type: ACTIONS.CHECK_NEXT_PAGE, payload: {hasNextPage: data.length !== 0}})
 					dispatch({type: ACTIONS.GET_DATA, payload: {jobs: data}})
 				},
 		).catch(e =>
 				dispatch({type: ACTIONS.ERROR, payload: {error: e}}),
 		)
-
 		return () => {
 			controller.abort()
 		}
