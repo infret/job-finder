@@ -41,9 +41,10 @@ export default function useFetchJobs(params, page) {
 	const [state, dispatch] = useReducer(reducer, {jobs: [], loading: true})
 
 	useEffect(() => {
-		fetch('https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?page='
+		fetch('https://secret-ocean-49799.herokuapp.com/https://jobs.github.com/positions.json?page='
 				+ page + ( params.search && ('&search=' + params.search.value)))
-				.then(res => res.json()).then(data => {
+				.then(res => res.json())
+				.then(data => {
 					dispatch({type: ACTIONS.CHECK_NEXT_PAGE, payload: {hasNextPage: data.length !== 0}})
 					dispatch({type: ACTIONS.GET_DATA, payload: {jobs: data}})
 				}).catch(e => dispatch({type: ACTIONS.ERROR, payload: {error: e}}),
