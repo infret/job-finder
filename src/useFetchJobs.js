@@ -41,25 +41,13 @@ export default function useFetchJobs(params, page) {
 	const [state, dispatch] = useReducer(reducer, {jobs: [], loading: true})
 
 	useEffect(() => {
-		const controller = new AbortController()
-		fetch('https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json', {
-			method: 'GET',
-			signal: controller.signal,
-			params: {
-				markdown: true,
-				page: page,
-				...params,
-			},
-		}).then(res => res.json()).then(data => {
+		fetch('https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?page='
+				+ page + ( params.search && ('&search=' + params.search.value)))
+				.then(res => res.json()).then(data => {
 					dispatch({type: ACTIONS.CHECK_NEXT_PAGE, payload: {hasNextPage: data.length !== 0}})
 					dispatch({type: ACTIONS.GET_DATA, payload: {jobs: data}})
-				},
-		).catch(e =>
-				dispatch({type: ACTIONS.ERROR, payload: {error: e}}),
+				}).catch(e => dispatch({type: ACTIONS.ERROR, payload: {error: e}}),
 		)
-		return () => {
-			controller.abort()
-		}
 	}, [params, page])
 
 	return state
