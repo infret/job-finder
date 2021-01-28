@@ -1,22 +1,38 @@
 import React from 'react'
-import {Pagination} from 'react-bootstrap';
+import { Pagination } from 'react-bootstrap'
 
-const JobsPagination = ({page, setPage, hasNextPage}) => (
-		<Pagination>
-			{page !== 1 && <>
-				<Pagination.Prev onClick={() => setPage(page--)}/>
-				<Pagination.Item onClick={() => setPage(1)}>1</Pagination.Item>
-			</>}
+const JobsPagination = ({ page, setPage, hasNextPage }) => {
+  function adjustPage(amount) {
+    setPage((prevPage) => prevPage + amount)
+  }
 
-			{page > 2 && <>
-				<Pagination.Ellipsis/>
-				<Pagination.Item onClick={() => setPage(page--)}>{page - 1}</Pagination.Item>
-			</>}
-			<Pagination.Item active>{page}</Pagination.Item>
-			{hasNextPage && (<>
-				<Pagination.Item onClick={() => setPage(page++)}>{page + 1}</Pagination.Item>
-				<Pagination.Next onClick={() => setPage(page++)}/>
-			</>)}
-		</Pagination>
-)
+  return (
+    <Pagination>
+      {page !== 1 && (
+        <>
+          <Pagination.Prev onClick={() => adjustPage(-1)} />
+          <Pagination.Item onClick={() => setPage(1)}>1</Pagination.Item>
+        </>
+      )}
+
+      {page > 2 && (
+        <>
+          <Pagination.Ellipsis />
+          <Pagination.Item onClick={() => adjustPage(-1)}>
+            {page - 1}
+          </Pagination.Item>
+        </>
+      )}
+      <Pagination.Item active>{page}</Pagination.Item>
+      {hasNextPage && (
+        <>
+          <Pagination.Item onClick={() => adjustPage(1)}>
+            {page + 1}
+          </Pagination.Item>
+          <Pagination.Next onClick={() => adjustPage(1)} />
+        </>
+      )}
+    </Pagination>
+  )
+}
 export default JobsPagination

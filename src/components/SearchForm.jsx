@@ -6,7 +6,7 @@ const SearchForm = ({params, onParamChange}) => (
 			<Form.Row className='align-items-end'>
 				<Form.Group as={Col}>
 					<Form.Label>Search</Form.Label>
-					<Form.Control onChange={onParamChange} value={params.search} name='search' type='text'/>
+					<Form.Control onChange={onParamChange} value={params.description} name='description' type='text'/>
 				</Form.Group>
 				<Form.Group as={Col} xs='auto' className='ml-2'>
 					<Form.Check className='mb-2' onChange={onParamChange} value={params.full_time} name='full_time' id='full-time' label='Only fulltime' type='checkbox'/>
