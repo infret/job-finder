@@ -31,7 +31,7 @@ export default function Jobs() {
         className='position-absolute p-5 w-100'
         style={{ zIndex: '1000' }}
       >
-        <Navbar.Brand href='#home' className='text-white'>
+        <Navbar.Brand href='#' className='text-white'>
           <BriefcaseFill size={26} color='white' className='mr-2 mb-1' />
           Job Finder
         </Navbar.Brand>
@@ -47,6 +47,9 @@ export default function Jobs() {
             <Nav.Link href='#' className='text-white'>
               For employers
             </Nav.Link>
+            <Nav.Link href='#' className='text-white'>
+              Help
+            </Nav.Link>
             <Button className='ml-auto btn-outline-white bg-transparent'>
               Login
             </Button>
@@ -55,13 +58,12 @@ export default function Jobs() {
         </Navbar.Collapse>
       </Navbar>
       <div
-        className='vh-100 w-100'
+        className='vh-100 w-100 mh-100'
         style={{
           filter: 'brightness(30%)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)'
+          background:
+            'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) no-repeat fixed',
+          backgroundSize: 'cover'
         }}
       ></div>
       <Container className='my-4'>
