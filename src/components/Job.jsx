@@ -28,9 +28,9 @@ export default function Job({ job }) {
           </div>
           <img
             className='d-none d-md-block'
-            height='50'
             alt={job.company}
             src={job.company_logo}
+            style={{ maxWidth: '300px', maxHeight: '60px', height: 'auto' }}
           />
         </div>
         <Card.Text>
