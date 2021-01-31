@@ -12,14 +12,24 @@ const SearchForm = ({ params, onParamChange }) => (
       name='description'
       type='text'
     />
-    <Form.Check
-      className='ml-1 mt-3 text-white'
-      onChange={onParamChange}
-      value={params.full_time}
-      name='full_time'
-      label='Only fulltime'
-      type='checkbox'
-    />
+    <div className='d-flex mt-3'>
+      <Form.Check
+        className='mx-2 text-white'
+        onChange={onParamChange}
+        value={params.full_time}
+        name='full_time'
+        label='Only fulltime'
+        type='checkbox'
+      />
+      <Form.Check
+        className='mx-2 text-white'
+        onChange={onParamChange}
+        value={params.remote}
+        name='remote'
+        label='Only remote'
+        type='checkbox'
+      />
+    </div>
   </Form>
 )
 export default SearchForm

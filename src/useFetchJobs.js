@@ -45,7 +45,8 @@ export default function useFetchJobs(params, page) {
     fetch(
       'https://secret-ocean-49799.herokuapp.com/https://jobs.github.com/positions.json?page=' +
         page +
-        (params.description && '&description=' + params.description)
+        (params.description && '&description=' + params.description) +
+        (params.full_time && '&full_time=true')
     )
       .then((res) => res.json())
       .then((data) => {
