@@ -1,5 +1,5 @@
 import useFetchJobs from '../useFetchJobs'
-import { Button, Navbar, Nav, Spinner } from 'react-bootstrap'
+import { Button, Navbar, Nav, Spinner, Alert } from 'react-bootstrap'
 import Job from './Job'
 import { useState } from 'react'
 import Pagination from './Pagination'
@@ -85,7 +85,15 @@ export default function Jobs() {
             <span className='sr-only'>Loading</span>
           </Spinner>
         )}
-        {error && <h1>Error</h1>}
+        {!error && (
+          <Alert
+            variant='danger'
+            className='position-absolute'
+            style={{ zIndex: 9000, left: '40%', top: '80%' }}
+          >
+            Error occured. Try to refresh page.
+          </Alert>
+        )}
         {!loading && !error && (
           <>
             <Pagination
