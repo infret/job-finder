@@ -1,5 +1,5 @@
 import useFetchJobs from '../useFetchJobs'
-import { Button, Navbar, Nav } from 'react-bootstrap'
+import { Button, Navbar, Nav, Spinner } from 'react-bootstrap'
 import Job from './Job'
 import { useState } from 'react'
 import Pagination from './Pagination'
@@ -74,7 +74,17 @@ export default function Jobs() {
         </div>
       </header>
       <main className='mx-auto p-3' style={{ maxWidth: '1000px' }}>
-        {loading && <h1>Loading...</h1>}
+        {loading && (
+          <Spinner
+            variant='light'
+            animation='border'
+            role='status'
+            className='position-absolute'
+            style={{ zIndex: 9000, left: '48%', top: '80%' }}
+          >
+            <span className='sr-only'>Loading</span>
+          </Spinner>
+        )}
         {error && <h1>Error</h1>}
         {!loading && !error && (
           <>
