@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/job-finder/static/js/main.5cf07275.chunk.js",
-    "main.js.map": "/job-finder/static/js/main.5cf07275.chunk.js.map",
-    "runtime-main.js": "/job-finder/static/js/runtime-main.a21ee9e9.js",
-    "runtime-main.js.map": "/job-finder/static/js/runtime-main.a21ee9e9.js.map",
-    "static/js/2.c00d0ff4.chunk.js": "/job-finder/static/js/2.c00d0ff4.chunk.js",
-    "static/js/2.c00d0ff4.chunk.js.map": "/job-finder/static/js/2.c00d0ff4.chunk.js.map",
+    "main.js": "/job-finder/static/js/main.72d584b9.chunk.js",
+    "main.js.map": "/job-finder/static/js/main.72d584b9.chunk.js.map",
+    "runtime-main.js": "/job-finder/static/js/runtime-main.3b1c60f1.js",
+    "runtime-main.js.map": "/job-finder/static/js/runtime-main.3b1c60f1.js.map",
+    "static/js/2.b33be16d.chunk.js": "/job-finder/static/js/2.b33be16d.chunk.js",
+    "static/js/2.b33be16d.chunk.js.map": "/job-finder/static/js/2.b33be16d.chunk.js.map",
     "index.html": "/job-finder/index.html",
-    "static/js/2.c00d0ff4.chunk.js.LICENSE.txt": "/job-finder/static/js/2.c00d0ff4.chunk.js.LICENSE.txt"
+    "static/js/2.b33be16d.chunk.js.LICENSE.txt": "/job-finder/static/js/2.b33be16d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a21ee9e9.js",
-    "static/js/2.c00d0ff4.chunk.js",
-    "static/js/main.5cf07275.chunk.js"
+    "static/js/runtime-main.3b1c60f1.js",
+    "static/js/2.b33be16d.chunk.js",
+    "static/js/main.72d584b9.chunk.js"
   ]
 }
